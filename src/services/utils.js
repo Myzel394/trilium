@@ -302,6 +302,10 @@ function filterAttributeName(name) {
     return name.replace(/[^\p{L}\p{N}_:]/ug, "");
 }
 
+function wrapText(text, start, length, prefix, suffix) {
+    return text.substring(0, start) + prefix + text.substr(start, length) + suffix + text.substring(start + length);
+}
+
 module.exports = {
     randomSecureToken,
     randomString,
@@ -336,5 +340,6 @@ module.exports = {
     deferred,
     removeDiacritic,
     normalize,
-    filterAttributeName
+    filterAttributeName,
+    wrapText
 };
