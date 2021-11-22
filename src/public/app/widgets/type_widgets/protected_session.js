@@ -39,4 +39,8 @@ export default class ProtectedSessionTypeWidget extends TypeWidget {
 
         super.doRender();
     }
+
+    focusInput() {
+        setTimeout(() => this.$passwordInput.focus(), 0);
+    }
 }

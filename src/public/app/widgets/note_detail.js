@@ -136,6 +136,12 @@ export default class NoteDetailWidget extends NoteContextAwareWidget {
 
             this.child(typeWidget);
         }
+
+        const widget = this.typeWidgets[this.type];
+
+        if (Object.getPrototypeOf(widget).constructor.getType() === "protected-session") {
+            widget.focusInput()
+        }
     }
 
     getTypeWidget() {
